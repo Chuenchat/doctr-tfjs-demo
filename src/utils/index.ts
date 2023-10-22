@@ -27,7 +27,7 @@ import {
   VOCAB,
 } from "src/common/constants";
 import { ModelConfig } from "src/common/types";
-import { chunk } from "underscore";
+import { any, chunk } from "underscore";
 
 export const loadRecognitionModel = async ({
   recognitionModel,
@@ -164,10 +164,11 @@ export const dataURItoBlob = (dataURI: string) => {
 };
 
 export const getCrops = ({ stage }: { stage: Stage }) => {
-  const layer = stage.findOne<Layer>("#shapes-layer");
+  // const layer = stage.findOne<Layer>("#shapes-layer");
+  const layer = stage.findOne<any>("#shapes-layer");
   const polygons = layer.find(".shape");
   return Promise.all(
-    polygons.map((polygon) => {
+    polygons.map((polygon: any) => {
       const clientRect = polygon.getClientRect();
       return new Promise((resolve) => {
         stage.toImage({
@@ -290,12 +291,13 @@ export const extractBoundingBoxesFromHeatmap = (size: [number, number]) => {
   cv.cvtColor(src, src, cv.COLOR_RGBA2GRAY, 0);
   cv.threshold(src, src, 77, 255, cv.THRESH_BINARY);
   cv.morphologyEx(src, src, cv.MORPH_OPEN, cv.Mat.ones(2, 2, cv.CV_8U));
-  let contours = new cv.MatVector();
+  // let contours = new cv.MatVector();
+  let contours=new cv.MatVector();
   let hierarchy = new cv.Mat();
   // You can try more different parameters
   cv.findContours(
     src,
-    contours,
+    contours as any,
     hierarchy,
     cv.RETR_EXTERNAL,
     cv.CHAIN_APPROX_SIMPLE
@@ -309,8 +311,8 @@ export const extractBoundingBoxesFromHeatmap = (size: [number, number]) => {
       boundingBoxes.unshift(transformBoundingBox(contourBoundingBox, i, size));
     }
   }
-  src.delete();
+  // src.delete();
   contours.delete();
-  hierarchy.delete();
+  // hierarchy.delete();
   return boundingBoxes;
 };

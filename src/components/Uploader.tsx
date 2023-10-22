@@ -36,11 +36,16 @@ export default function Uploader({
       });
     });
   };
+
   const { getRootProps, getInputProps, open } = useDropzone({
-    accept: "image/*",
+    accept: {
+      "image/*": [".png", ".gif", ".jpeg", ".jpg"],
+    },
     onDrop,
     multiple: false,
   });
+
+
   return (
     <Box
       id={COMPONENT_ID}

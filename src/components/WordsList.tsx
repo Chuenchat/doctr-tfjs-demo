@@ -12,9 +12,7 @@ import {
   Theme,
   Typography,
 } from "@material-ui/core";
-import { Card } from "@mindee/web-elements.ui.card";
 import { Word } from "src/common/types";
-import { COLORS, FONTS } from "@mindee/web-elements.assets";
 
 const COMPONENT_ID = "WordsList";
 
@@ -58,23 +56,8 @@ export default function WordsList({
 }: Props): JSX.Element {
   const classes = useStyles();
   return (
-    <Card
-      topBar
-      header={
-        <Box display="flex" flexDirection="column">
-          <Typography
-            style={{ fontFamily: FONTS.bold }}
-            paragraph
-            variant="subtitle1"
-          >
-            4 - Visualize word values
-          </Typography>
-          <Typography style={{ fontSize: 14, marginTop: -5 }} variant="caption">
-            {words.length ? `${words.length}  words identified` : ""}
-          </Typography>
-        </Box>
-      }
-      contentStyle={{
+    <div
+      style={{
         paddingTop: 20,
       }}
       id={COMPONENT_ID}
@@ -86,7 +69,7 @@ export default function WordsList({
             height="100%"
             width="100%"
             borderRadius="4px"
-            border={`1px solid ${COLORS.border}`}
+            border={`1px solid black`}
             display="flex"
             alignItems="center"
             justifyContent="center"
@@ -116,6 +99,6 @@ export default function WordsList({
           ))
         )}
       </Grid>
-    </Card>
+    </div>
   );
 }

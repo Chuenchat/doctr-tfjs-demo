@@ -4,7 +4,7 @@
 // See LICENSE or go to <https://www.apache.org/licenses/LICENSE-2.0.txt> for full license details.
 
 import { Grid, makeStyles, Theme } from "@material-ui/core";
-import { COLORS } from "@mindee/web-elements.assets";
+// import { COLORS } from "@mindee/web-elements.assets";
 import { BrowserView, MobileView } from "react-device-detect";
 import MobileViewPage from "./components/MobileView";
 import PageFooter from "./components/PageFooter";
@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     width: "100%",
   },
   content: {
-    background: COLORS.background,
+    background: '#F5F5F5',
     paddingLeft: 42,
     paddingRight: 42,
     paddingTop: 10,

@@ -8,8 +8,6 @@ import Uploader from "./Uploader";
 import { UploadedFile } from "../common/types";
 
 import placeholder from "../assets/image-placeholder.svg";
-import { FONTS } from "@mindee/web-elements.assets";
-import { Spinner } from "@mindee/web-elements.ui.spinner";
 
 const useStyles = makeStyles((theme: Theme) => ({
   wrapper: {
@@ -40,19 +38,15 @@ export default function ImageViewer({
   const classes = useStyles();
   return (
     <Box className={classes.wrapper}>
-      <Typography
-        style={{ fontFamily: FONTS.bold, marginBottom: 20 }}
-        paragraph
-        variant="subtitle1"
-      >
+      <p      >
         2 - Upload an image
-      </Typography>
+      </p>
       <Uploader
         style={{ height: "225px", justifyContent: "center" }}
         onUpload={onUpload}
       >
         {loadingImage ? (
-          <Spinner />
+          <div />
         ) : (
           <Box
             border="1px solid #E6E9EC"

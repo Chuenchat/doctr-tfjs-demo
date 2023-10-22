@@ -7,13 +7,10 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { ThemeWrapper } from "@mindee/web-elements.ui.theme-wrapper";
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeWrapper style={{ padding: 0, color: "#001E3C" }}>
-      <App />
-    </ThemeWrapper>
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );

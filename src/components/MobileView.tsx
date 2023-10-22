@@ -2,7 +2,6 @@ import React from "react";
 import { Box, makeStyles, Theme, Typography } from "@material-ui/core";
 import logo from "../assets/logo.svg";
 import doctrIcon from "../assets/doctr.svg";
-import { COLORS, FONTS } from "@mindee/web-elements.assets";
 
 const COMPONENT_ID = "MobileView";
 
@@ -18,7 +17,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     height: 28,
   },
   link: {
-    color: COLORS.blue,
+    color: 'blue',
     textDecoration: "underline",
   },
 }));
@@ -53,7 +52,7 @@ export default function MobileView(): JSX.Element {
         </Typography>
       </Box>
       <Typography
-        style={{ lineHeight: 1.5, fontFamily: FONTS.regular, fontSize: 18 }}
+        style={{ lineHeight: 1.5, fontSize: 18 }}
       >
         This demo requires advanced capabilities and can’t be performed on
         mobile devices. <br /> <br />

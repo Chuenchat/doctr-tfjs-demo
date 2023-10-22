@@ -1,6 +1,4 @@
 import { Box, makeStyles, Theme, Typography } from "@material-ui/core";
-import { COLORS, FONTS } from "@mindee/web-elements.assets";
-import { Card } from "@mindee/web-elements.ui.card";
 import doctrIcon from "../assets/doctr.svg";
 const COMPONENT_ID = "WelcomeMessage";
 
@@ -9,7 +7,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     marginBottom: 10,
   },
   link: {
-    color: COLORS.blue,
+    color: 'blue',
     textDecoration: "underline",
   },
   icon: {
@@ -21,12 +19,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 export default function WelcomeMessage(): JSX.Element {
   const classes = useStyles();
   return (
-    <Card
-      contentStyle={{
-        rowGap: 20,
-        display: "flex",
-        flexDirection: "column",
-      }}
+    <div
       id={COMPONENT_ID}
       className={classes.wrapper}
     >
@@ -37,7 +30,7 @@ export default function WelcomeMessage(): JSX.Element {
         </Typography>
       </Box>
       <Typography
-        style={{ lineHeight: 2, fontFamily: FONTS.regular, fontSize: 16 }}
+        style={{ lineHeight: 2, fontSize: 16 }}
       >
         Upload an image and select models out{" "}
         <a
@@ -74,6 +67,6 @@ export default function WelcomeMessage(): JSX.Element {
           Github repository.
         </a>
       </Typography>
-    </Card>
+    </div>
   );
 }

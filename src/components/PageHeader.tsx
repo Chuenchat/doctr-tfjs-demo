@@ -2,7 +2,6 @@ import React from "react";
 import { Box, makeStyles, Theme } from "@material-ui/core";
 
 import logo from "../assets/logo.svg";
-import { COLORS } from "@mindee/web-elements.assets";
 
 const COMPONENT_ID = "PageHeader";
 

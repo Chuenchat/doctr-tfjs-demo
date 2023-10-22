@@ -5,11 +5,8 @@
 
 import React from "react";
 import { Box, makeStyles, Theme, Typography } from "@material-ui/core";
-import { Card } from "@mindee/web-elements.ui.card";
 import { ModelConfig } from "src/common/types";
-import { SelectInput } from "@mindee/web-elements.ui.select-input";
 import { DET_CONFIG, RECO_CONFIG } from "src/common/constants";
-import { FONTS } from "@mindee/web-elements.assets";
 
 const COMPONENT_ID = "Sidebar";
 
@@ -36,18 +33,8 @@ export default function Sidebar({
 }: Props): JSX.Element {
   const classes = useStyles();
   return (
-    <Card
-      topBar
-      header={
-        <Typography
-          style={{ fontFamily: FONTS.bold }}
-          paragraph
-          variant="subtitle1"
-        >
-          1 - Select a Model
-        </Typography>
-      }
-      contentStyle={{
+    <div
+      style={{
         paddingTop: 10,
       }}
       id={COMPONENT_ID}
@@ -62,22 +49,22 @@ export default function Sidebar({
       >
         <Box className={classes.item} display="flex" flexDirection="column ">
           <Typography>Detection model</Typography>
-          <SelectInput
+          {/* <SelectInput
             value={detConfig}
             onChange={(value) => setDetConfig(value)}
             options={Object.values(DET_CONFIG)}
-          />
+          /> */}
         </Box>
         <Box className={classes.item} display="flex" flexDirection="column ">
           <Typography>Recognition model</Typography>
-          <SelectInput
+          {/* <SelectInput
             value={recoConfig}
             onChange={(value) => setRecoConfig(value)}
             options={Object.values(RECO_CONFIG)}
-          />
+          /> */}
         </Box>
         <Box mt="10px" id="upload-container"></Box>
       </Box>
-    </Card>
+    </div>
   );
 }
